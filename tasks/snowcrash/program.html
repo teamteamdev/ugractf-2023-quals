@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Snow Crash</title>
+	</head>
+	<body>
+		Enter flag:
+		<input type="text" id="flag" placeholder="ugra_...">
+		<input type="submit" id="checkButton" value="Check">
+		<span id="checkResult"></span>
+
+		<script type="text/javascript">
+			(async () => {
+				const wasm = await WebAssembly.instantiate(new Uint8Array([[[WASM]]]), {});
+
+				const buffer = new Uint8Array(wasm.instance.exports.memory.buffer);
+
+				const INPUT_ADDRESS = 512;
+
+				function checkFlag(flag) {
+					for(let i = 0; i < flag.length; i++) {
+						buffer[INPUT_ADDRESS + i] = flag.charCodeAt(i);
+					}
+					buffer[INPUT_ADDRESS + flag.length] = 0;
+					return wasm.instance.exports.check_flag(INPUT_ADDRESS) != 0;
+				}
+
+				document.querySelector("#checkButton").addEventListener("click", () => {
+					const flag = document.querySelector("#flag").value;
+					document.querySelector("#checkResult").textContent = checkFlag(flag) ? "Correct flag!!" : "Wrong flag";
+				});
+			})();
+		</script>
+	</body>
+</html>

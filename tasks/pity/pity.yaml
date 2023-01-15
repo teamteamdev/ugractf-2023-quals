@@ -1,0 +1,14 @@
+category:  misc
+points:    150
+title:     Мультфильмы
+author:    ivanq
+description: >
+    <p>Юниксоиды &mdash; как дети: собирают программы из деталек, называя это
+    UNIX way, играют в конструкторы, прикрываясь аббревиатурами lex и yacc,
+    никогда ничего не просят вежливо, а только говорят "дай" (точнее, wget
+    &mdash; даже слова писать не умеют)... Так что, пока настоящие программисты
+    работали над DOS, юниксоиды пилили поддержку мультфильмов.</p>
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: 8PH7RXWHsl4RbJOHG3IFuftBIjFyXPlg
+    flag: ugra_weve_got_terminals_[a-z0-9]{12}

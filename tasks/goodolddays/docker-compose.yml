@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    environment:
+      - TASK_NAME
+    networks:
+      - isolated
+    user: "${DOCKER_USER}"
+    volumes:
+      - "${TMPDIR}:/tmp"
+      - "${STATEDIR}:/state"
+      - "./:/task:ro"
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile.admin
+    environment:
+      - TASK_NAME
+      - "SERVICE_HOST=https://${TASK_NAME}.${KYZYLBORDA_DOMAIN}"
+    user: "${DOCKER_USER}"
+    volumes:
+      - "${TMPDIR}:/tmp"
+      - "${STATEDIR}:/state"
+      - "./:/task:ro"
+networks:
+  isolated:
+    internal: true

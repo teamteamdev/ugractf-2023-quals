@@ -1,0 +1,7 @@
+FROM imachug/kyzylborda_lib
+RUN apk add --no-cache chromium-chromedriver
+WORKDIR /app
+COPY admin/requirements.txt ./
+RUN pip install -r requirements.txt
+COPY admin ./
+CMD ./start.sh

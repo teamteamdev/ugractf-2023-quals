@@ -1,0 +1,21 @@
+services:
+  server:
+    build: server/
+    networks:
+      - task-net
+    environment:
+      - "FLAG=${FLAG}" # flag is recieved as script argument, then exported as env
+  client:
+    build: client/
+    networks:
+      - task-net
+    volumes:
+      - ${TMPDIR}:/data # tmpdir is defined in script
+    cap_add:
+      - NET_ADMIN
+networks:
+  task-net:
+    driver: bridge
+    internal: true
+    ipam:
+      driver: default

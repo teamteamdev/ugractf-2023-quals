@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Вася решает ВЯК: qrec</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <p style="font-size: 1.5em; text-align: center; max-width: 600px; margin: 1em auto;">Вы вошли в кабинет информатики, где Вася обычно готовится к ВЯК. Перед собой вы обнаружили компьютер совершенно неизвестной марки «Сибирский ленинец II» и небольшой кусочек бересты с текстом.</p>
+
+        <h1>Береста</h1>
+        <div class="paper">
+            <p>Задача очень проста: нужно вычислить следующую функцию:</p>
+            <code>f(1) = 1,<br>f(n) = sum(f(i) | 1 &leq; i &lt; n, n делится на i) + n</code>
+            <h2>Описание ввода-вывода</h2>
+            <p>Изначально на стеке будет храниться только одно значение — аргумент
+            фукции. После выполнения кода на стеке должен остаться только результат.</p>
+            <h2>Пример</h2>
+            <table>
+                <tr>
+                    <td>
+                        <h4>Ввод</h4>
+                        <pre> 5 (top) </pre>
+                    </td>
+                    <td>
+                        <h4>Вывод</h4>
+                        <pre> 6 (top) </pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <p style="text-align: center">На обратной стороне бересты вы нашли
+            <a href="/specs">инструкцию</a> к ленинецу.</p>
+
+        <h1>Компьютер</h1>
+        <div class="computer">
+            <form method="POST">
+                <textarea name="code" placeholder="> НАЖМИТЕ МЫШЬЮ НА ЭКРАН ДЛЯ ВВОДА ПРОГРАММЫ А ЗАТЕМ НАЖМИТЕ ,,ВВОД'' ИЛИ КНОПКУ ,,ПУСК'' ЧУТЬ ПРАВЕЕ И НИЖЕ ..."></textarea>
+                <input type="submit" value="ПУСК" />
+            </form>
+        </div>
+    </body>
+</html>

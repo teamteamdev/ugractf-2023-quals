@@ -1,0 +1,12 @@
+category: reverse
+points:    200
+title:    Qualification
+author:   rozetkin
+description: |
+  <p>Ну вот ты и прошел курс по переквалификации. Осталось только пройти экзаменационный тест и заветный сертификат у тебя в кармане!</p>
+generator: kyzylborda-docker-generator Dockerfile.generator ./generator.py
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: app
+  socket: ./app.sock
+  socket_type: http

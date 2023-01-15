@@ -1,0 +1,11 @@
+category: reverse
+points:   300
+title:    Bege
+author:   gudn
+description: >
+  Евгений не успевает подготовиться к ЕГЭ по биологии, но ему везет. Почти.
+  <br/> Он смог достать файл с правильными ответами на экзамен, но, к сожалению,
+  он оказался зашифрован. Программа для шифрования по счастливой случайности
+  оказалась рядом. Сможете достать ответы и написать ЕГЭ лучше Евгения?
+attachments_path: attachments
+generator: kyzylborda-docker-generator Dockerfile.generator ./generate.sh

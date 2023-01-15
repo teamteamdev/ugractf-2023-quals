@@ -1,0 +1,3 @@
+FROM python:alpine
+RUN apk upgrade && apk add --no-cache zlib-dev jpeg-dev build-base ffmpeg
+RUN pip3 install pillow

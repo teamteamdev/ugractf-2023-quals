@@ -1,0 +1,11 @@
+category: reverse
+points:   250
+title:    Crypdle
+author:   ivanq
+description: >
+    <p>У популярной игры Wordle есть небольшой недостаток: в нее возможно выиграть. В новой версии
+    разработчики попытались это исправить криптографическими методами.</p>
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: kbjrrmBxOEMAJIZBKGNwqQk0KlSJoapR
+    flag: ugra_no_you_cant_replace_backend_with_crypto_[0-9a-z]{12}

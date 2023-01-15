@@ -1,0 +1,6 @@
+socket: unix:/tmp/app.sock
+healthcheck:
+  connect: unix:/tmp/app.sock
+volumes:
+  - ./site.conf:/etc/nginx/conf.d/site.conf:ro
+  - ./99-php.sh:/docker-entrypoint.d/99-php.sh:ro

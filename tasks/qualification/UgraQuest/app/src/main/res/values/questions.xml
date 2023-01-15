@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="qTotal">9999</integer>
+    <string name="CommandKey">{KEY}</string>
+    <string name="CommandName">{USER}</string>
+
+    <string-array name="question_1">
+        <item>q35</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="question_10">
+        <item>q7</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="question_11">
+        <item>q28</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="question_12">
+        <item>q6</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="question_13">
+        <item>q9</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="question_14">
+        <item>q13</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="question_15">
+        <item>q19</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="question_2">
+        <item>q12</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="question_3">
+        <item>q20</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="question_4">
+        <item>q31</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="question_5">
+        <item>q15</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="question_6">
+        <item>q34</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="question_7">
+        <item>q36</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="question_8">
+        <item>q11</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="question_9">
+        <item>q22</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>2</item>
+    </string-array>
+</resources>

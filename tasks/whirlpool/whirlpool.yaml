@@ -1,0 +1,10 @@
+category:  crypto
+points:    50
+title:     Водоворот
+author:    ivanq
+description: >
+    <p>Это сообщение зашифровано 1337 раундами алгоритма ROT-13.</p>
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: 2jF9NS3SWWckCk/rPPv+TtO0tWA8FJbv
+    flag: ugra_double_security_for_only_50_more_bucks_[a-z0-9]{12}

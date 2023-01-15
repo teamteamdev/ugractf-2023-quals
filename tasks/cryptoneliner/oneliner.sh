@@ -1,0 +1,1 @@
+echo -n $1 | base64 | tr '[A-Za-z0-9]' '[N-ZA-Mn-za-m3-90-2]' | rev | xxd -p | xargs -I {} python3 -c "import sys;print(f'{int(sys.argv[1],16)^int((sys.argv[2]*(len(sys.argv[1])//len(sys.argv[2])+1))[:len(sys.argv[1])],16):x}')" {} deadbeef | awk '{print substr($0,length/2+1) substr($0,1,length/2)}'

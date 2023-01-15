@@ -1,0 +1,114 @@
+@font-face {
+    font-family: Literaturnaya;
+    src: url(/static/Literaturnaya.ttf);
+}
+
+@font-face {
+    font-family: Dited;
+    src: url(/static/Dited.otf);
+}
+
+* {
+    font-weight: 400;
+}
+
+body {
+    font-family: Literaturnaya;
+}
+
+code, pre {
+    font-family: Literaturnaya;
+    letter-spacing: 3px;
+}
+
+.paper {
+    background: rgb(208, 203, 193);
+    padding: 10px 20px 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+td h4 {
+    border-bottom: 2px solid #000;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 2em 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 2px;
+    margin: 2em 0 1em;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+.computer {
+    width: calc(767px * 1.25);
+    height: calc(647px *1.25);
+    margin: 0 auto;
+    background: url('/static/leninets.svg') no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+textarea[name="code"] {
+    position: absolute;
+    top: 59px;
+    left: 504px;
+    width: 331px;
+    height: 331px;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: #f00;
+    resize: none;
+    font-family: Dited;
+    font-size: 24px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: none;
+}
+
+textarea[name="code"]:placeholder-shown {
+    animation: blink 2s infinite;
+}
+
+textarea[name="code"]:focus {
+    animation: none;
+}
+
+@keyframes blink{
+    0%{color: #f00;}
+    69.99%{color: #f00;}
+    70%{color: #f008;}
+    100%{color: #f004;}
+}
+
+textarea[name="code"]::placeholder {
+    animation: blink 1s infinite;
+}
+
+input[type="submit"] {
+    position: absolute;
+    left: 813px;
+    top: 738px;
+    width: 100px;
+}
+
+table.big {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+table.big td {
+    border: 1px solid #000;
+    padding: 5px;
+}

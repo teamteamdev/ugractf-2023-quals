@@ -1,0 +1,28 @@
+category:  web
+points:    200
+title:     Старые добрые времена
+author:    ivanq
+description: >
+  <p>
+    Вася завел блог. Как полагается начинающему разработчику, написал он его с нуля. Покажите Васе, что он неправ.
+  </p>
+  <p><em>Добавлено 15 января в 01:45:</em></p>
+  <p>
+    <b>Подсказка.</b> Флаг &mdash; пароль администратора.
+  </p>
+  <p>
+    <small>В этой задаче у каждой команды своя база данных.</small>
+  </p>
+  <form method="POST" action="https://goodolddays.{{hostname}}/{{token}}/__reset_db__">
+    <button>Сбросить базу данных</button>
+  </form>
+generator: ../_scripts/kyzylborda-lib-generator
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: .
+  socket: ./app.sock
+  socket_type: http
+secrets:
+  seed: fo9ZeDq/vIDDkWmROrjsD+MIGyg4M+dX
+  flag: ugra_stop_reinventing_the_wheel_[a-z0-9]{12}
+  admin: "[a-z0-9]{16}"

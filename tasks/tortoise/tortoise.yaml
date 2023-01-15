@@ -1,0 +1,15 @@
+category: crypto
+points:   350
+title:    Скорость без границ
+author:   ivanq
+description: >
+    <p>Когда у тебя под рукой суперкомпьютер, все задачи выглядят тривиальными.
+    Жаль только, что иногда суперкомпьютеры ломаются, и данные приходится
+    расшифровывать на ноутбуке десятилетней давности. И вроде и данные есть, и
+    ключ сохранился, но есть нюанс...</p>
+attachments_path: attachments
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: djA0uxvD6x100r+QmMyhf5+8s2BMkLF7
+    flag: ugra_never_underestimate_predictability_[a-z0-9]{12}
+    password: \w{12}

@@ -1,0 +1,14 @@
+category: ppc
+points:   300
+title:    Maze Runner
+author:   ivanq
+description: <p>Импортозамещение добралось до pacman.</p>
+generator: ../_scripts/kyzylborda-lib-generator
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: app
+  socket: ./app.sock
+  socket_type: http
+secrets:
+  seed: XBHTpAuJkBBt6ADAY5OXrN7Xm7wftERu
+  flag: ugra_listen_to_in_the_dark_by_bmth_[a-z0-9]{12}

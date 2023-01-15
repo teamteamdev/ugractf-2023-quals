@@ -1,0 +1,8 @@
+name: capture
+category: "forensics"
+title:  "Захват трафика"
+points: 100
+author: baksist
+description:  |
+    <p>Нам удалось перехватить секретную передачу данных. Есть ли в ней что-то интересное?</p>
+generator:  ./generate.py

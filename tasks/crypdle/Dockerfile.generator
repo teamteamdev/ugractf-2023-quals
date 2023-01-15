@@ -1,0 +1,4 @@
+FROM imachug/kyzylborda_lib
+RUN apk add --no-cache gcc mingw-w64-gcc musl-dev openssl openssl-dev openssl-libs-static
+WORKDIR /task
+ENTRYPOINT ["kyzylborda-generate", "generator"]

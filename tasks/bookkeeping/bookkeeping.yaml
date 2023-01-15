@@ -1,0 +1,12 @@
+category: stegano
+points:   100
+title:    Бухгалтерия
+author:   ivanq
+description: |
+  <p>
+    Тете Люде явно было нечем заняться в рабочее время.
+  </p>
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: bwMpwrKzGUMeCdenutEdlwI3mFtWhZj3
+    flag: ugra_you_asked_for_lattices_[0-9a-z]{12}

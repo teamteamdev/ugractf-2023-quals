@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Старые добрые деньки</title>
+	</head>
+	<body>
+		Ваш логин: {% if authorized_login %}admin{% else %}anonymous{% endif %}<br>
+		Ваш пароль: {% if authorized_login %}{{ flag }}{% else %}(нет пароля){% endif %}<br>
+
+		<h1>Всем привет!</h1>
+		<i>опубликовано 18 декабря 2022 г.</i><br>
+
+		Это мой кавайный бложик. Возможно, тут даже что-то будет. Пока открываю комментарии &mdash; предлагайте идеи, о чем можно написать!
+
+		<h3>Комментарии</h3>
+
+		{% for comment in comments %}
+			<i>[#{{ comment.id }}] от <b>{{ comment.author }}</b></i>:<br>
+			<blockquote>
+				{{ comment.content|safe }}
+			</blockquote>
+			<hr>
+		{% endfor %}
+
+		<h4>Написать комментарий</h4>
+
+		<form action="post" method="POST">
+			Твое имя: <input placeholder="Антон" name="author" class="raw-input" /><br>
+			<textarea placeholder="Нижний текст" name="content"></textarea><br>
+			<input type="submit" value="Отправить" />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    user: "${DOCKER_USER}"
+    volumes:
+      - ".:/app:ro"
+      - "${TMPDIR}:/tmp"
+      - "${STATEDIR}:/state"
+
+networks:
+  default:
+    internal: true

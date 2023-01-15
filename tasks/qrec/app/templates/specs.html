@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>A language instruction</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body class="paper">
+    <h2>Memory</h2>
+    You can use 4 memory cells with names <code>a, b, c, d</code> and stack. By
+    default all registers contains zeros.
+
+    <h2>Available commands</h2>
+    Any command accepts register name or plain integer value in range [−10; 10]
+    <ul>
+      <table class="big">
+      <tr><td><code>mov a b</code></td><td> a = b</td></tr>
+      <tr><td><code>add a b</code></td><td> a += b</td></tr>
+      <tr><td><code>sub a b</code></td><td> a -= b</td></tr>
+      <tr><td><code>mul a b</code></td><td> a *= b</td></tr>
+      <tr><td><code>div a b</code></td><td> a /= b (integer division)</td></tr>
+      <tr><td><code>push a</code></td><td> push value of <code>a</code> on stack</td></tr>
+      <tr><td><code>pop a</code></td><td> pop value from stack to <code>a</code> (only to register)</td></tr>
+      <tr>
+        <td><code>je a "label"</code></td>
+        <td>jump to <code>label</code> (only
+        value) if <code>a</code> is equal to zero</td>
+      </tr>
+      <tr>
+        <td><code>jg a "label"</code></td>
+        <td>jump to <code>label</code> (only
+        value) if <code>a</code> is greater than zero</td>
+      </tr>
+      <tr>
+        <td><code>jl a "label"</code></td>
+        <td>jump to <code>label</code> (only
+        value) if <code>a</code> is less than zero</td>
+      </tr>
+      <tr>
+        <td width="150px"><code>jmp "label"</code></td>
+        <td>jump to <code>label</code>
+      </tr></td>
+      </table>
+    </ul>
+
+    <h2>Macros</h2>
+    Also you can use C-style macros without parameters. Nested defines is
+    forbidden, names can't have spaces.
+    <pre><code>
+#DEFINE macroName
+push 1
+#ENDDEFINE
+
+macroName!
+    </code></pre>
+    Also all labels in macros prepended via unique hash for every macro call. To
+    jump label in local macro use <code>je a "{}label"</code>.
+
+    <h2>Example of code (mul top of stack with 2)</h2>
+    <pre><code>
+// case is ignored
+#DeFiNe some
+jmp "{}innerlabel"
+push 1
+innerlabel:
+push 2
+#enddefine
+
+// comments
+
+some!
+
+pop a
+pop b
+start:
+je b "end"
+sub b 1
+add d a
+je c "start"
+end:
+push d
+    </code></pre>
+  </body>
+</html>

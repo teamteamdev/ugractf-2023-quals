@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% set current_page = "post" %}
+{% set title = post.title %}
+{% block main %}
+<div id="contents">
+    <div class="post">
+      <h2>{{ post.title }}</h2>
+      <div class="postbottom">
+        <a href="{{ url_for('post', id=post.id) }}">Постоянная ссылка</a>
+        <a>Новости</a>
+        <a>Автор: Иван Александров</a>
+      </div>
+      <script>var postid = '{{ post.full_id() }}';</script>
+      {{ post.format_excerpt(request)|safe }}
+      {% if post.text %}
+      <div class="all-content" style="min-height:80vh;">
+      <div class="spoiler-wr" style="position :relative; height: 5px;">
+      <div class="spoiler" style="background-color: #fff; height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1>Для дальнейшего чтения купите подписку</h1>
+        <p>Вы поможете нам развивать наш сайт</p>
+        <a href="{{ url_for('subscribe') }}"><button style="padding: 0.5em; font-size: 2em;">Подробнее</button></a>
+      </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-1.7.min.js"></script>
+      <script src="{{ url_for('static', path='js/paywall.js') }}" id="paywall"></script>
+      </div>
+      {% endif %}
+    </div>
+
+{% endblock %}

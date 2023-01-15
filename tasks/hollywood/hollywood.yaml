@@ -1,0 +1,19 @@
+category: ppc
+points:   250
+title:    Голливуд
+author:   ivanq
+description: >
+  <p>
+    Перебирая от скуки телефонные номера, пытаясь настроить dial-up, вы внезапно натыкаетесь на до
+    боли знакомый звук на каком-то незнакомом номере. Проконсультировавшись со знакомыми, вы
+    решаете, что это, скорее всего, секретный игровой сервер. Как бы теперь подобрать пароль...
+  </p>
+generator: ../_scripts/kyzylborda-lib-generator
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: app
+  socket: ./app.sock
+  socket_type: http
+secrets:
+  seed: P1llfxcAinHUPNe4PMeSF1ZitTilUr+R
+  flag: ugra_how_about_a_nice_game_of_chess_[a-z0-9]{12}

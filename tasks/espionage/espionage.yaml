@@ -1,0 +1,13 @@
+category:  crypto
+points:    150
+title:     Прямо как у NSA
+author:    ivanq
+description: >
+    <p>Наши корпоративные ...разведчики перехватили переписку, в которой
+    содержится чрезвычайно важная информация о наших конкурентах. Единственная
+    проблема &mdash; письма зашифрованы. Только лучшие из лучших криптографов
+    смогут ее расшифровать. Выполните свой долг перед Корпорацией!</p>
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: q39Eq7/P+S3D+b2nLxK5S9oudZKCgkuN
+    flag: ugra_you_guys_are_getting_encryption_[0-9a-z]{12}

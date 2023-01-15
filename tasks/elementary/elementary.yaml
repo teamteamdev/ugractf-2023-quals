@@ -1,0 +1,10 @@
+category:  reverse
+points:    100
+title:     Элементарно
+author:    ivanq
+description: >
+    <p>Просто старые добрые обратимые функции.</p>
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: a+eruhKNDiAELIfQSJ4LDGbMN+p+JCsE
+    flag: ugra_astonishing_[0-9a-z]{12}

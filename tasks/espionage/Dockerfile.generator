@@ -1,0 +1,6 @@
+FROM imachug/kyzylborda_lib
+RUN apk add --no-cache gcc musl-dev
+WORKDIR /task
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+ENTRYPOINT ["kyzylborda-generate", "generator"]

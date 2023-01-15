@@ -1,0 +1,9 @@
+category: stegano
+points:   50
+title:    Музыкальная пятиминутка
+author:   ksixty
+description: |
+  <p>В конце рабочего дня — самое то!
+  <p><audio controls><source src="static/6574_ksikky_-_stf_pesny_(radio_edit)_320kbps.mp3" type="audio/ogg"></audio>
+  <p><small>℗ 2023 новая () метта</small>
+generator: kyzylborda-docker-generator Dockerfile.generator ./generate.py

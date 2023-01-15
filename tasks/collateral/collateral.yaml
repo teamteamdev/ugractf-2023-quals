@@ -1,0 +1,24 @@
+category: ctb
+points:   200
+title:    Антивирус возвращается
+author:   ivanq
+description: >
+    <p>
+      Современные антивирусы настолько прочно влезают в систему, что их с тем же успехом можно
+      считать вирусами: границы все более и более размыты. А еще дыры в некоторых антивирусах
+      приводят к запуску вирусного кода с правами администратора.
+    </p>
+    <p>
+      А вы спокойно спите по ночам?
+    </p>
+    {{reboot_machine}}
+attachments_path: app/www/_
+generator: ../_scripts/kyzylborda-lib-generator
+daemon:
+  exec: ../_scripts/kyzylborda-lib-quarantine-daemon Dockerfile.controller app
+  cwd: .
+  socket: ./app.sock
+  socket_type: http
+secrets:
+  seed: ZY+uE+RLspvWKNyhrsQJYOZS/yvznpvI
+  flag: ugra_ever_wondered_who_uses_virustotal_most_huh_[a-z0-9]{12}

@@ -1,0 +1,4 @@
+FROM imachug/kyzylborda_lib
+RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing clang lld wabt wasi-sdk
+WORKDIR /task
+ENTRYPOINT ["kyzylborda-generate", "generator"]

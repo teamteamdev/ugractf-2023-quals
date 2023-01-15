@@ -1,0 +1,22 @@
+category: pwn
+points:   100
+title:    Безопасность должна быть доступной
+author:   gudn
+description: >
+  <p>Одна крупная компания решила открыть код своей внутренней библиотеки для работы со строками. Они настолько в ней уверены, что запустили echo-сервер с ключом доступа от их Bitcoin кошелька. Сможете его достать?</p>
+  {{reboot_machine}}
+generator: ../_scripts/kyzylborda-lib-generator
+attachments_path: attachments
+bullets:
+  - <code>nc safestr.{{hostname}} 11667</code>
+  - "Токен: <code>{{token}}</code>"
+  - '<a href="https://ru.wikipedia.org/wiki/Netcat">Что такое nc?</a>'
+daemon:
+  exec: ../_scripts/kyzylborda-lib-quarantine-daemon Dockerfile.controller app
+  cwd: .
+  socket: ./app.sock
+  socket_type: tcp
+  tcp_port: 11667
+secrets:
+  seed: Q1sxb4zeRqFV6Gl4roBwsSL4KEJP6UMa
+  flag: ugra_safe_0r_no7_5afe_[a-z0-9]{12}

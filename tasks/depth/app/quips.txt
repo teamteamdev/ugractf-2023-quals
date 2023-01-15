@@ -1,0 +1,120 @@
+Power corrupts. Absolute power is kind of neat. -- John Lehman
+Everyone has a right to my opinion.
+Suppose you were an idiot and suppose you were a member of Congress. But I repeat myself. -- Mark Twain
+It's not a feature, it's a bug.
+First things first, but not necessarily in that order. -- Doctor Who
+Our collection of bugs. Please don't kill them: we think they're kinda cute!
+Tech support: [after 20 mins] the monitor is off? plug it in? it wont go on? there's a ..power.. a power failure? Do you still have the boxes your computer came in? Good pack it up, take it to the store and tell them you're too f%$#i!!@ stupid to own a computer!
+Don't let your schooling interfere with your education.
+g++ --you-know-what-i-mean project.cpp
+This version has many new and good features. Sadly, the good ones are not new and the new ones are not good.
+"When you said you wanted /free software/, you should have specified you wanted /bug-free software/" -- Avery Lee
+AI.cc:33241: warning: You wrote 'neurons.merge(solution1, solution2)", you probably MEANT "neurons->merge(solution1, solution2)" but there is MUCH better way to implement this whole function; doing that instead.
+It was hard to write. It SHOULD be hard to understand!
+Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it. -- Brian Kernighan
+In general, the less often we have to rebuild the world, the better. -- Mark Mitchell
+"If there is no solution, then there is no problem." -- Shadok saying
+const int infinity = 100;
+Pi=3, for small values of pi and large values of 3.
+C++: increment the value of C and use the old one
+It's never too late to give up.
+To measure once leads to knowledge, to measure twice leads to doubt, to measure three times leads to statistics.
+I don't want the world; I just want your half.
+All generalizations are false.
+Under capitalism man exploits man, under communism it's just the opposite.
+There are 3 ways to do something: the right way, the wrong way, and the fun way.
+In practice there is a lot of difference between theory and practice.
+I never make stupid mistakes. Only very, very clever ones.
+I also concluded that a testcase was, as some Japanese might say, "slightly impossible". -- Paul Thomas
+Any sufficiently advanced technology is indistinguishable from magic. -- Arthur C. Clarke
+Keyboard not found. Press F1 to continue...
+We are programmers and, deep down, programmers are architects. The first thing they want to do when they arrive in a new place is to raze everything to the ground and built something grandiose.
+If you make a system so simple that any idiot could use it only an idiot would *want* to use it.
+The primary purpose of the DATA statement is to give names to constants; instead of referring to PI as 3.141592653589797, at every appearance, the variable PI can be given that value with a DATA statement, and used instead of the longer form of the constant. This also simplifies modifying the program, should the value of PI change. -- Xerox FORTRAN manual
+I think there is a bug in ... Andrew: CLOSED INVALID, CLOSED, CLOSED, CLOSED, CLOSED I tell ya
+"I only got into Linux because someone mentioned free beer." -- David Robinson
+Faster-than-light travel, relativity, causality. Pick any two.
+Have you tried turning it off and on again?
+Q: Which is worse, ignorance or apathy? A: I don't know and I don't care.
+Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. -- Albert Einstein
+Insanity is doing the same thing, over and over again, but expecting different results. -- Albert Einstein
+Never memorize something that you can look up. -- Albert Einstein
+Education is what remains after one has forgotten what one has learned in school. -- Albert Einstein
+Everything must be made as simple as possible. But not simpler. -- Albert Einstein
+We do not need more promises. We need to start keeping the promises we have already given. -- Kofi Annan
+The thing about quotes on the internet is that you cannot confirm their validity. -- Abraham Lincoln
+Birthdays are good for your health -- studies have shown that people who have more birthdays live longer.
+Object-oriented programming is an exceptionally bad idea which could only have originated in California. -- Edsger Dijkstra
+An unknown error has occurred in an unidentified program while executing an unimplemented function at an undefined address. Correct the error and resubmit.
+Error: Success.
+Anything that doesn't matter has no mass.
+A problem with "obvious" is that "obvious" doesn't necessarily mean "true".
+The program is ill-formed. The behavior is undefined. No diagnostic is required.
+My unspecified code got some sort of unspecified error; does anyone know why?
+Any complex analytic function is the solution to some fluid mechanics problem.
+This quip is sponsored by the Department of Redundancy Department.
+Newton's mistake was to confuse phase and group velocities.
+A visit to the doctor did not result in any additional injuries.
+This quip has been encrypted using 100 rounds of the ROT13 algorithm.
+If N=1 then P=NP
+It works really well unless you try to use it.
+Constants are proportional to themselves.
+This quip is not available in your location.
+If you insist on shooting your foot it is the job of the operating system to ensure reliable delivery of the bullet.
+Aleph-null bottles of beer on the wall, Aleph-null bottles of beer. Take one down, pass it around, Aleph-null bottles of beer on the wall...
+This quip comes with NO WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+With great power comes a great electricity bill.
+oil_rig.cc:1234: warning: the heat generated by CPUs running this code will raise global temperatures by 0.13 degrees when executed. [-Wclimate-change]
+Violence is the last refuge of the incompetent.
+Never let your sense of morals prevent you from doing what is right.
+It pays to be obvious, especially if you have a reputation for subtlety.
+One advantage of talking to yourself is that you know at least somebody's listening.
+If you wish to make an apple pie from scratch, you must first invent the universe.
+All design goals must be phrased in such a way that it is hard to use them as slogans to justify stupidity.
+A dream will always triumph over reality, once it is given the chance.
+The problem is always between the chair and the monitor.
+How many Prolog programmers does it take to change a light bulb? Yes.
+...that's a difficult problem though, because essentially it is making pigs from sausages. -- tilmann
+If it can go wrong it probably already has.
+There is always a well-known solution to every human problem -- neat, plausible, and wrong.
+Ninety-nine bugs in the code. Take one down, patch it around, Ninety-nine bugs in the code.
+Life is complex -- it has both real and imaginary parts.
+It will be a very much better world with M0 broken.
+Those who would give up essential Liberty, to purchase a little temporary Safety, deserve neither Liberty nor Safety. -- Benjamin Franklin
+Any sufficiently advanced hobby is indistinguishable from work.
+-falign-functions -falign-jumps -falign-labels -falign-loops -falign-morality
+This isn't feature creep, this is a feature stampede.
+ASCII stupid question, get a stupid ANSI.
+warning: after 3 levels of inlining (potentially across files with Link Time Optimization), some common subexpression elimination, after hoisting this thing out of a loop and proving that these 13 pointers don't alias, we found a case where you're doing something undefined. This could either be because there is a bug in your code, or because you have macros and inlining and the invalid code is dynamically unreachable but we can't prove that it is dead.
+I am so clever that sometimes I don't understand a single word of what I am saying.
+I have not failed. I've just found 10,000 ways that won't work.
+I swear to drunk I'm not God!
+Nature of a compromise is that it leaves everyone more or less equally unhappy.
+I love mankind ... it's people I can't stand!!
+I am free of all prejudice. I hate everyone equally.
+Insanity is relative. It depends on who has who locked in what cage.
+Anything you dream is fiction, and anything you accomplish is science, the whole history of mankind is nothing but science fiction. -- Ray Bradbury
+I have two rules in life -- to hell with it, whatever it is, and get your work done.
+'Classic' -- a book which people praise and don't read.
+A clear conscience is the sure sign of a bad memory.
+And those who were seen dancing were thought to be insane by those who could not hear the music.
+However beautiful the strategy, you should occasionally look at the results.
+Problem with looking too much at the future, is you can get caught up in enjoying or anticipating what's down the road. Sometimes you have to live in the now, bring that future to pass.
+I'm not a drug salesman. I'm a writer. -- What makes you think a writer isn't a drug salesman?
+History! Read it and weep!
+We don't ask to be eternal beings. We only ask that things do not lose all their meaning.
+Free time is the easiest thing to sacrifice. It costs you, to give it up, but there's little guilt.
+Those are my principles, and if you don't like them, I have others.
+I am perfectly sane, and so are all the other people in my head.
+I love deadlines. I like the whooshing sound they make as they fly by.
+Are you aware that rushing toward a goal is a sublimated death wish? It's no coincidence we call them 'deadlines'.
+I am a person who works well under pressure. In fact, I work so well under pressure that at times, I will procrastinate in order to create this pressure.
+In what container do you store a universal solvent?
+Common sense is not a gift, it is a punishment, because you have to deal with everyone who doesn't have it.
+Whenever you find yourself on the side of the majority, it's time to pause and reflect. -- Mark Twain
+When you have an efficient government, you have a dictatorship. -- Harry Truman
+When you live in a sick society, just about everything you do is wrong.
+What passes for optimism is most often the effect of an intellectual error. -- Raymond Aron, "The Opium of the Intellectuals"
+What can be asserted without proof can be dismissed without proof.
+What can a thoughtful man hope for mankind on earth, given the experience of the past million years? Nothing.
+War does not determine who is right - only who is left. -- Bertrand Russell

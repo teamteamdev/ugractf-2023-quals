@@ -1,0 +1,10 @@
+category: reverse
+points:   300
+title:    Snow Crash
+author:   ivanq
+description: >
+    <p>Суета...</p>
+generator: ../_scripts/kyzylborda-lib-generator
+secrets:
+    seed: AIoxfE2GxYj/VvuwyYCwfKIUPhx/nFBf
+    flag: ugra_dont_roll_your_own_cryptography_unless_you_are_nist_[a-z0-9]{12}

@@ -1,0 +1,13 @@
+category: web
+points:   100
+title:    Трисекция
+author:   baksist
+description: |
+  <p>Три, три, три — будет?...</p>
+  <p><em>Обновлено 14 января в 14:05:</em> Задание немного упрощено — мы кое-что добавили.</p>
+generator: kyzylborda-docker-generator Dockerfile.generator ./generate.py
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: app
+  socket: ./app.sock
+  socket_type: http

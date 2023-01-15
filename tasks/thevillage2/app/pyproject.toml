@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "villageblog"
+version = "0.1.0"
+description = ""
+authors = ["Nikita Sychev <root@nsychev.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+starlette = "^0.23.1"
+Jinja2 = "^3.1.2"
+uvicorn = "^0.20.0"
+
+
+[tool.poetry.group.dev.dependencies]
+kyzylborda-lib = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

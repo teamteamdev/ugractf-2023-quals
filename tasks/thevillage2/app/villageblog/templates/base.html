@@ -1,0 +1,159 @@
+{%
+    set menu = menu|default([
+        ('main', url_for('main'), 'Главная'),
+        ('subscribe', url_for('subscribe'), 'Купить подписку')
+    ])
+%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Сельский Блог{% if title %} - {{ title }}{% endif %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{{ url_for('static', path='style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <script src="{{ url_for('static', path='js/snowflakes.js') }}"></script>
+  <script>
+    var base_url = document.location.pathname.split("/")[1];
+  </script>
+<div id="wrap">
+  <div id="header">
+    <div id="topbar">
+      <h1 id="sitename"><a href="#">Сельский<span>Блог</span></a><span></span></h1>
+      <form action="https://google.com" method="GET">
+        <div id="topsearch">
+          <input name="q" type="text" size="25" />
+        </div>
+      </form>
+    </div>
+    <div id="headercontent">
+      <h2 id="description">Опережая события!</h2>
+      <div id="headerlinks">Подпишись на ленту <a href="{{ url_for('static', path='feed.xml') }}"><img src="{{ url_for('static', path='images/rss.jpg') }}" alt="" width="128" height="70" /></a></div>
+    </div>
+    <div id="topnav">
+      <ul>
+        {% for slug, url, name in menu -%}
+        {%- if slug == current_page -%}
+        <li class="active"><a href="#">{{ name }}</a></li>
+        {%- else -%}
+        <li><a href="{{ url }}">{{ name }}</a></li>
+        {%- endif -%}
+        {% endfor -%}
+      </ul>
+    </div>
+  </div>
+  <div id="page">
+    <div class="ad-hell-block" style="float: left; width: 595px;">
+      <p style="font-size: 9px; color: #080;"><b>$$$ РЕКЛАМА</b> - AD-HELL КЛИКИ ДЛЯ ВАШЕГО САЙТА (РАДИ ПРИБЫЛИ И УСПЕХА)</p>
+      <img id="ad-hell" style="width: 100%; border: 1px solid #888; padding: 2px; height: 160px; max-width: 595px;">
+      <script src="{{ url_for('static', path='js/adhell.js') }}"></script>
+    </div>
+    {% block main %}
+    {% endblock %}
+    <p>Поделиться в соц. сетях:</p> <script src="https://yastatic.net/share2/share.js"></script>
+        <div class="ya-share2" data-curtain data-size="m" data-services="vkontakte,odnoklassniki,twitter,viber,whatsapp,skype,tumblr,lj,blogger"></div>
+    </div>
+    <div id="sidebar">
+      <ul style="margin-top: -200px;">
+        <li>
+          <h2>Париж</h2>
+          <p id="paris">Загружается....</p>
+          <script src="{{ url_for('static', path='paris.js') }}"></script>
+        </li>
+        <li>
+            <h2>Ваш гороскоп</h2>
+            <!-- Разместить в том месте где должен быть информер -->
+<div id="horo_emotion">Loading...</div>
+
+<!-- Разместить перед тегом </body> -->
+<script type="text/javascript" src="https://informers.ukr.net/horo/emotion/js.php?Type=glamour&Size=200x300&div=horo_emotion" charset="windows-1251"></script>
+        </li>
+        <li class="categories">
+          <h2>Радио Парижа</h2>
+          <div id="radiobells_container"><a href="https://www.radiobells.com/" id="RP_link">Онлайн радио</a> #radiobells_script_hash</div><link href="https://www.radiobells.com/script/style.css" type="text/css" rel="stylesheet" /><script type="text/javascript">var rad_backcolor="#434242"; var rad_logo = "black"; var rad_autoplay = true; var rad_width = "responsive"; var rad_width_px = 330;var rad_stations =[['https://ep256.hostingradio.ru:8052/europaplus256.mp3','Европа плюс','europaplus'],['https://radiorecord.hostingradio.ru/rr_main96.aacp','Радио Рекорд','radiorecord'],['https://nashe1.hostingradio.ru/nashe-256','Наше радио','nashe'],['https://pub0101.101.ru/stream/air/aac/64/100','Авторадио','avtoradio'],['https://pub0202.101.ru:8443/stream/air/aac/64/99','Радио Energy','nrj'],['https://link.smmbox.ru/http://online.kissfm.ua/KissFM_HD','Kiss FM','kissfm']];</script><script type="text/javascript" src="https://www.radiobells.com/script/v2_1.js" charset="UTF-8"></script>
+        </li>
+        <li>
+          <h2>Архив</h2>
+          <ul>
+            <li><a href='{{ url_for('main') }}'>Январь 2011</a></li>
+          </ul>
+        </li>
+        <li id="linkcat-2" class="linkcat">
+          <h2>Полезные ссылки</h2>
+          <ul>
+            <li><a href="https://freeprograms.me/17-yandex-elements.html">Яндекс Бар</a></li>
+            <li><a href="https://help.mail.ru/atom/atom">Браузер Атом</a></li>
+            <li><a href="https://icq.com/desktop/ru?#linux">ICQ</a></li>
+          </ul>
+        </li>
+        <li>
+          <h2>Для контролирующих организаций</h2>
+          <ul>
+            <li><a href="http://validator.w3.org/check/referer">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+            <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="clear">&nbsp;</div>
+  </div>
+  <div id="footer">
+    <div id="leftfoot"> Copyright &copy; Сельский блог 2006-2023<br />
+              <!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=17520555&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/17520555/3_1_FFCA20FF_FFAA00FF_1_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="70220887" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(70220887, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/17520555" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+      <a href="{{ url_for('main') }}">Главная</a> |  <a href="{{ url_for('static', path='sitemap.xml') }}">Карта сайта</a><span id="credit">Разработка дизайна — <a href="http://ramblingsoul.com">CSS Template</a> by RamblingSoul</span><br />
+    </div>
+    <div id="rightfoot"> <a href="#wrap">Back To Top</a> | Valid <a href="https://validator.w3.org/check?uri=referer">XHTML 1.0</a>| <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/"">CSS 2.0</a></div>
+  </div>
+</div>
+<script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"enableGdpr":false,"enableLgpd":true,"floatingPreferencesButtonDisplay":"bottom-right","invalidateConsentWithoutLog":true,"lang":"ru","perPurposeConsent":true,"whitelabel":false,"cookiePolicyId":33302872,"siteId":2938990, "banner":{ "acceptButtonCaptionColor":"#FFFFFF","acceptButtonColor":"#313E5F","acceptButtonDisplay":true,"backgroundColor":"#D8FEE2","backgroundOverlay":true,"closeButtonDisplay":false,"customizeButtonCaptionColor":"#313E5F","customizeButtonColor":"#C1E5CB","customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"rejectButtonCaptionColor":"#FFFFFF","rejectButtonColor":"#313E5F","rejectButtonDisplay":true,"theme":"night_sky-light_trend","textColor":"#313E5F" }};
+    </script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+
+    <div class="modal-overlay" data-modal-id="1">
+ 
+          <div class="modal-table">
+       
+              <div class="modal-table-cell">
+       
+                  <div class="modal" id="callback-form" >
+                      <div class="modal__close"></div>
+                      <div class="modal__header">Купите нашу подписку</div>
+                      <div class="modal__content">
+                            <p>Наша газета находится в сложнейшем финансовом состоянии.</p>
+                            <p>Помощь каждого читателя — бесценна.</p>
+                            <p>Помогите нам сегодня и получайте важнейшие новости завтра.</p>
+                            <a href="{{ url_for('subscribe') }}"><button style="padding: 0.5em; font-size: 2em;">Подробнее</button></a>
+                      </div>
+                </div>
+       
+              </div>
+       
+          </div>
+       
+      </div>
+</body>
+</html>

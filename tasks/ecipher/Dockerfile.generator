@@ -1,0 +1,13 @@
+FROM silex/emacs
+
+RUN DEBIAN_NONINTERACTIVE=true apt update && \
+  apt install -y libgcrypt20-dev fortune && \
+  apt-get clean
+
+COPY ./text.txt /text.txt
+COPY ./generate.sh /generate.sh
+COPY ./cipher_orig.el /cipher.el
+
+RUN chmod +x /generate.sh
+
+ENTRYPOINT ["/generate.sh"]

@@ -1,0 +1,61 @@
+// d - stack size
+// b - cycle iterator
+// c - current sum
+// a - argument
+
+mov d 0
+
+// a on stack
+f:
+add d 1
+pop a
+sub a 1
+je a "one"
+add a 1
+
+push a
+push 1
+push 0
+mov b 1
+
+// b, a on registers, abc on stack
+loop:
+mov c a
+div a b
+mul a b
+push b
+sub c a
+je c "f"
+pop b
+pop c
+jmp "skip"
+
+// abc<result> on stack
+return:
+pop b
+pop c
+add c b
+
+// c on registers, ab on stack
+skip:
+pop b
+add b 1
+pop a
+sub b a
+je b "loopend"
+add b a
+push a
+push b
+push c
+jmp "loop"
+
+// c, a on registers, empty stack
+loopend:
+add c a
+push c
+jmp "fend"
+one:
+push 1
+fend:
+sub d 1
+jg d "return"

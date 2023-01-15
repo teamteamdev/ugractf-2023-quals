@@ -1,0 +1,18 @@
+category: ctb
+points:   200
+title:    Доказательство запугиванием
+author:   ivanq
+description: >
+    <p>
+      Если бы олимпиады разрабатывали математики, потерявшие связь с реальностью, то они бы выглядели как-то так. Хотя постойте...
+    </p>
+    {{reboot_machine}}
+generator: ../_scripts/kyzylborda-lib-generator
+daemon:
+  exec: ../_scripts/kyzylborda-lib-quarantine-daemon Dockerfile.controller app
+  cwd: .
+  socket: ./app.sock
+  socket_type: http
+secrets:
+  seed: ALTkERgsjC77pCl98lJAY6i2AnlqQurR
+  flag: ugra_this_aint_funny_this_is_cursed_[a-z0-9]{12}

@@ -1,0 +1,110 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,geometry,unicode-math}
+\usepackage[shortlabels]{enumitem}
+
+\newcommand{\const}{\mathrm{const}}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\dd}{\mathrm{d}}
+
+\makeatletter
+\newenvironment{sqcases}{%
+	\matrix@check\sqcases\env@sqcases
+}{%
+	\endarray\right.%
+}
+\def\env@sqcases{%
+	\let\@ifnextchar\new@ifnextchar
+	\left\lbrack
+	\def\arraystretch{1.2}%
+	\array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setmainfont{CMU Serif}
+\widowpenalties 1 10000
+\raggedbottom
+
+\title{Олимпиада им. У. Ц. Уцуги \\ \Large 9--11 класс}
+\date{30 февраля 2020 г.}
+
+\begin{document}
+	\maketitle
+
+	\textbf{Задача 1.} Рассмотрим обобщенную игру для двух игроков в крестики-нолики на поле $n \times n \times \dots \times n = n^w$: первый и второй игрок по очереди ставят $X$ и $O$ соответственно в клетки изначально пустой $w$-мерной таблицы. Игрок выигрывает, если после его хода найдется упорядоченный набор из $n$ клеток с одинаковыми символами, такой, что по каждой координате у всех клеток набора эта координата либо совпадает, либо монотонно убывает или возрастает. Если таблица оказывается заполнена целиком, но ни один игрок не выигрыл, объявляется ничья.
+
+	Считая, что оба игрока играют оптимально:
+
+	\begin{enumerate}[a)]
+		\item (1 балл) Покажите, что при $w = 2, n \le 2$ выигрывает первый игрок.
+		\item (2 балла) Покажите, что при $w = 2, n \ge 6$ второй игрок может достичь ничьи независимо от ходов первого.
+		\item (по 0.5 балла, итого 1.5 баллов) Пусть $w = 2$. Покажите, что при $n = 3, 4, 5$ второй игрок может достичь ничьи независимо от ходов первого.
+		\item (3 балла) Пусть $w$ произвольно. Покажите, что начиная с некоторого достаточно большого $n$ первый игрок всегда выигрывает.
+		\item (2 балла) Пусть $w$ произвольно. Покажите, что если при $n$ первый игрок всегда выигрывает, то он выигрывает и при $n+1$.
+	\end{enumerate}
+
+
+	\textbf{Задача 2.} Выясните, имеет ли следующее уравнение решение в целых числах при данных условиях:
+
+	\begin{equation*}
+		\frac{x}{y + z} + \frac{y}{x + z} + \frac{z}{x + y} = n
+	\end{equation*}
+
+	\begin{enumerate}[a)]
+		\item (1 балл) $n = 0$
+		\item (1 балл) $n = 1$
+		\item (1 балл) $n = 2$
+		\item (2 балла) $n$ -- положительное нечетное число.
+		\item (3 балла) $n$ -- положительное четное число.
+	\end{enumerate}
+
+
+	\textbf{Задача 3.} Определим бесконечную последовательность целых чисел следующим способом: $a_1 = k$, а далее $a_n = f(m a_{n-1} + 1)$, где $f(x)$ -- максимальный нечетный делитель числа $x$. Здесь $k, m$ -- параметры.
+
+	Обозначим за $b_k$ минимум последовательности $\{a_n\}$ в зависимости от $k$. Посчитайте максимум $b_k$ по всем $k$, если:
+
+	\begin{enumerate}[a)]
+		\item (1 балл) $m = 10$.
+		\item (1 балл) $m = 5$.
+		\item (3 балла) $m$ -- натуральное, $m \ne 3$.
+		\item (4 балла) $m = 3$.
+	\end{enumerate}
+
+
+	\textbf{Задача 4.} Определим последовательность действительных функций действительного переменного так: пусть $f_0(x) = \mathrm{1}_{-1 < x < 1}$, а далее
+
+	\begin{equation*}
+		f_n(x) = \frac{1}{1+2n} \int_{x - \frac{1}{2+4n}}^{x + \frac{1}{2+4n}} f_{n-1}(x) \dd x.
+	\end{equation*}
+
+	\begin{enumerate}[a)]
+		\item (2 балла) Покажите, что при всех $n$: $f_n(0) = 1$.
+		\item (3 балла) Покажите, что при всех $n$:
+		\begin{equation*}
+			\int_{-\infty}^{+\infty} \frac{\sin x}{x} \cdot \frac{\sin (x/3)}{x/3} \cdot \dots \cdot \frac{\sin \frac{x}{2n+1}}{x/(2n+1)} \dd x = \pi.
+		\end{equation*}
+	\end{enumerate}
+
+
+	\textbf{Задача 5.} (4 балла) Решите систему функциональных уравнений относительно гладких действительных функций четырех переменных в общем виде, считая функции $\rho, J_x, J_y, J_z$ параметрами:
+
+	\begin{gather*}
+		\begin{cases}
+			\dfrac{\partial D_x}{\partial x}(t, x, y, z) + \dfrac{\partial D_y}{\partial y}(t, x, y, z) + \dfrac{\partial D_z}{\partial z}(t, x, y, z) = \rho(t, x, y, z) \\
+			\dfrac{\partial B_x}{\partial x}(t, x, y, z) + \dfrac{\partial B_y}{\partial y}(t, x, y, z) + \dfrac{\partial B_z}{\partial z}(t, x, y, z) = 0 \\
+			\dfrac{\partial E_y}{\partial z}(t, x, y, z) - \dfrac{\partial E_z}{\partial y}(t, x, y, z) = \dfrac{\partial B_x}{\partial t}(t, x, y, z) \\
+			\dfrac{\partial E_z}{\partial x}(t, x, y, z) - \dfrac{\partial E_x}{\partial z}(t, x, y, z) = \dfrac{\partial B_y}{\partial t}(t, x, y, z) \\
+			\dfrac{\partial E_x}{\partial y}(t, x, y, z) - \dfrac{\partial E_y}{\partial x}(t, x, y, z) = \dfrac{\partial B_z}{\partial t}(t, x, y, z) \\
+			\dfrac{\partial E_z}{\partial y}(t, x, y, z) - \dfrac{\partial E_y}{\partial z}(t, x, y, z) = J_x(t, x, y, z) + \dfrac{\partial D_x}{\partial t}(t, x, y, z) \\
+			\dfrac{\partial E_x}{\partial z}(t, x, y, z) - \dfrac{\partial E_z}{\partial x}(t, x, y, z) = J_y(t, x, y, z) + \dfrac{\partial D_y}{\partial t}(t, x, y, z) \\
+			\dfrac{\partial E_y}{\partial x}(t, x, y, z) - \dfrac{\partial E_x}{\partial y}(t, x, y, z) = J_z(t, x, y, z) + \dfrac{\partial D_z}{\partial t}(t, x, y, z)
+		\end{cases}
+	\end{gather*}
+
+	\begin{center}
+		Желаем удачи!
+	\end{center}
+\end{document}

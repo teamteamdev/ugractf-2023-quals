@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maze Runner</title>
+
+		<style type="text/css">
+			html {
+				background-color: black;
+			}
+			pre {
+				line-height: 1;
+				color: white;
+			}
+
+			h2, h3 {
+				margin: 0;
+			}
+
+			.shiny {
+				animation: shiny 1s infinite alternate;
+				border-radius: 4px;
+			}
+			.blink {
+				animation: blink 0.5s infinite alternate linear;
+			}
+			#time-left {
+				animation: timeout 4s infinite alternate linear;
+			}
+
+			@keyframes shiny {
+				0% {
+					background-color: #040;
+					box-shadow: 0 0 8px 8px #040;
+				}
+				100% {
+					background-color: #080;
+					box-shadow: 0 0 8px 8px #080;
+				}
+			}
+
+			@keyframes blink {
+				0% {
+					color: #ff8;
+				}
+				100% {
+					color: #8ff;
+				}
+			}
+
+			@keyframes timeout {
+				0% {
+					color: #f00;
+				}
+				100% {
+					color: #f88;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<pre>
+			<h2>Level <span id="level">?</span></h2>
+			<h3>Time left: <span id="time-left">?</span>&nbsp;&nbsp;<i>You can always reset the game by pressing <b>r</b>.</i></h3>
+			<h3 id="text"></h3>
+			<h3 id="notice"></h3>
+		</pre>
+		<pre id="screen"></pre>
+
+		<script type="text/javascript">
+			const token = location.pathname.replace(/\//g, "");
+
+
+			/*
+			 * Graphics
+			 */
+			const BOXES = {
+				"0000": "╳",
+				"1000": "╴",
+				"0100": "╶",
+				"0010": "╵",
+				"0001": "╷",
+				"1100": "─",
+				"1010": "┘",
+				"1001": "┐",
+				"0110": "└",
+				"0101": "┌",
+				"0011": "│",
+				"1110": "┴",
+				"1101": "┬",
+				"1011": "┤",
+				"0111": "├",
+				"1111": "┼"
+			};
+
+			const PORTAL_COLORS = [
+				"#0ff",
+				"#f0f",
+				"#ff0",
+				"#f00",
+				"#0f0",
+				"#00f",
+				"#f80",
+				"#f08",
+				"#80f",
+				"#08f"
+			];
+
+			const screen = document.querySelector("#screen");
+
+			let charCache = "";
+
+			function addChar(char, color=null, class_="") {
+				if(color || class_) {
+					flushCharCache();
+					const node = document.createElement("span");
+					node.textContent = char;
+					node.style.color = color;
+					node.className = class_;
+					screen.appendChild(node);
+				} else {
+					charCache += char;
+				}
+			}
+
+			function flushCharCache() {
+				if(charCache !== "") {
+					screen.appendChild(document.createTextNode(charCache));
+					charCache = "";
+				}
+			}
+
+			let currentField;
+			let endTime = null;
+
+			setInterval(() => {
+				if(endTime > Date.now() / 1000) {
+					let seconds = Math.floor(endTime - Date.now() / 1000);
+
+					let minutes = Math.floor(seconds / 60);
+					seconds %= 60;
+
+					document.querySelector("#time-left").textContent = `${minutes}:${("00" + seconds).slice(-2)}`;
+				} else {
+					document.querySelector("#time-left").textContent = "finished";
+				}
+			}, 500);
+
+			function render(field) {
+				currentField = field;
+				screen.innerHTML = "";
+				for(let y = 0; y < field.length; y++) {
+					for(let x = 0; x < field[y].length; x++) {
+						const cur = field[y][x];
+						const left = field[y][x - 1] || " ";
+						const right = field[y][x + 1] || " ";
+						const up = (field[y - 1] || [])[x] || " ";
+						const down = (field[y + 1] || [])[x] || " ";
+						if(cur === " ") {
+							addChar(" ");
+						} else if(cur === "#") {
+							const c = BOXES[
+								(left === "#" ? "1" : "0")
+								+ (right === "#" ? "1" : "0")
+								+ (up === "#" ? "1" : "0")
+								+ (down === "#" ? "1" : "0")
+							];
+							addChar(c);
+						} else if(cur === "@") {
+							addChar("@", "#0f0", "shiny");
+						} else if("A" <= cur && cur <= "Z") {
+							addChar("■", PORTAL_COLORS[cur.charCodeAt(0) - "A".charCodeAt(0)]);
+						} else if(cur === ".") {
+							addChar("⚑", "", "blink");
+						} else {
+							addChar(cur, "red");
+						}
+					}
+					addChar("\n");
+				}
+
+				flushCharCache();
+			}
+
+
+			/*
+			 * Input/output
+			 */
+			let keyBuffer = "";
+			let keyBufferResolve;
+			let keyBufferPromise;
+			let sending = false;
+
+			async function sendKey(key) {
+				keyBuffer += key;
+				if(sending) {
+					await keyBufferPromise;
+				} else {
+					await dumpBuffer();
+				}
+			}
+
+			async function dumpBuffer() {
+				const keys = keyBuffer;
+				keyBuffer = "";
+				sending = true;
+				keyBufferPromise = new Promise(resolve => keyBufferResolve = resolve);
+				showResult(await (await fetch(`/${token}/api`, {
+					method: "POST",
+					body: keys
+				})).json());
+				keyBufferResolve();
+				sending = false;
+				if(keyBuffer) {
+					dumpBuffer();
+				}
+			}
+
+			function showResult(result) {
+				document.querySelector("#level").textContent = result.level;
+				document.querySelector("#text").innerHTML = result.text;
+				document.querySelector("#notice").innerHTML = result.notice || "&nbsp;";
+				result.field[result.cursor[0]][result.cursor[1]] = "@";
+				render(result.field);
+				endTime = result.end_time;
+			}
+
+			dumpBuffer();
+
+			window.addEventListener("keydown", e => {
+				const key = {
+					ArrowLeft: "<",
+					ArrowRight: ">",
+					ArrowUp: "^",
+					ArrowDown: "v"
+				}[e.key] || e.key.toUpperCase();
+				if(!e.ctrlKey && key.length === 1) {
+					sendKey(key);
+					e.preventDefault();  // scrolling
+				}
+			});
+
+
+			/*
+			 * Automatic mode
+			 */
+
+			// TODO: does not work very well
+
+			/*
+			let exploreStop = true;
+			window.addEventListener("keydown", e => {
+				if(e.key === "[") {
+					if(exploreStop) {
+						autoExplore();
+					} else {
+						exploreStop = true;
+					}
+				}
+			});
+
+			async function autoExplore() {
+				exploreStop = false;
+
+				let direction = Math.random() * 4 | 0;
+				const directions = [[1, 0], [0, -1], [-1, 0], [0, 1]];
+
+				while(!exploreStop) {
+					if(Math.random() < 0.01) {
+						direction = Math.random() * 4 | 0;
+					} else {
+						let playerY = currentField.findIndex(line => line.indexOf("@") !== -1);
+						let playerX = currentField[playerY].indexOf("@");
+
+						let oldDirection = (direction + 2) % 4;
+						let steps = 0;
+						let [dY, dX] = directions[direction];
+						while(currentField[playerY + dY][playerX + dX] === "#" || (oldDirection === direction && steps < 4)) {
+							direction = (direction + 1) % 4;
+							[dY, dX] = directions[direction];
+							steps++;
+						}
+					}
+
+					await sendKey("v<^>"[direction]);
+				}
+			}
+			*/
+		</script>
+	</body>
+</html>

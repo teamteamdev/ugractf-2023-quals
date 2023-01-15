@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Переподготовка ИБ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank</string>
+    <string name="header">Федеральное государственное бюджетное учреждение высшего образования\n«Исследовательский институт изучения информационных искусств\n(ФГБУ ВО ИИИИИ)»</string>
+    <string name="button_start">Начать</string>
+    <string name="button_exit">Выход</string>
+    <string name="test_name">Тестирование по курсу «Организационные системы информационной безопасности предприятия»</string>
+    <string name="end_test">Тестирование завершено. Ваш результат: %s. Отправляем результат на сервер…</string>
+    <string name="end_test_error">Ошибка отправки результата на сервер. Попробуйте еще раз.</string>
+    <string name="end_test_success">Документ по адресу: %s</string>
+</resources>

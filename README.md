@@ -1,6 +1,6 @@
 # Ugra CTF Quals 2023
 
-[Сайт](https://2023.ugractf.ru) | 14–15 января 2023
+14–15 января 2023 | [Сайт](https://2023.ugractf.ru) | [Результаты](SCOREBOARD.md)
 
 ## Таски
 
